@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             if (adapterView.getItemAtPosition(i).equals("Celsius") && !(userInputValue.getText().toString().matches(""))) {
                 field1.setText(MessageFormat.format("{0} Kelvin", celsiusToK(Double.parseDouble(String.valueOf(userInputValue.getText())))));
                 field2.setText(MessageFormat.format("{0} Fahrenheit", celsiusToF(Double.parseDouble(String.valueOf(userInputValue.getText())))));
+                field3.setText("");
             }
             else { Toast.makeText(MainActivity.this, "Enter Some Value", Toast.LENGTH_SHORT).show(); }
         });
@@ -92,15 +93,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     //3 methods to handle the length conversions
     public double meterToCm(double val) { return decimalFormatter(val * 100); }
-    public double meterToFoot(double val) { return  decimalFormatter(val * 3.281); }
-    public double meterToInch(double val) { return  decimalFormatter(val * 39.36); }
+    public double meterToFoot(double val) { return  decimalFormatter(val * 3.280839895); }
+    public double meterToInch(double val) { return  decimalFormatter(val * 39.37007874); }
 
     //3 methods to handle the weight conversions
     public double kgToGram(double val) { return  decimalFormatter(val * 1000); }
-    public double kgToOunce(double val) { return  decimalFormatter(val * 35.27345); }
-    public double kgToPound(double val) { return  decimalFormatter(val * 2.2); }
+    public double kgToOunce(double val) { return  decimalFormatter(val * 35.27396195); }
+    public double kgToPound(double val) { return  decimalFormatter(val * 2.205); }
 
     //2 methods to handle the temp conversions
-    public double celsiusToK(double val) { return  decimalFormatter(val * 273.15); }
+    public double celsiusToK(double val) { return  decimalFormatter(val + 274.15 - 1); }
     public double celsiusToF(double val) { return  decimalFormatter((val * 1.8) + 32); }
 }
