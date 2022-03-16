@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name = "tempContentDescription" > tempIconButton </string>
+    <string name = "weightContentDescription" > weightIconButton </string>
+    <string name = "lengthContentDescription" > lenIconButton </string>
+    <string name = "hintString" > Enter Value </string>
+    <string name = "spinnerContentDescription" > mySpinnerList </string>
+    <string-array name="toBeConvertedUnits">
+        <item>Meter</item>
+        <item>Celsius</item>
+        <item>Kilogram</item>
+    </string-array>
+</resources>
